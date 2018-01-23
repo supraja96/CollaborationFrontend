@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div data-ng-controller="FriendController">
+	<form id="blogformid" method="post">
+		<table width="100%">
+
+			<tr bgcolor="black">
+				<td><b>Friend Name</b></td>
+				<td><b>Status</b></td>
+				
+			</tr>
+			<tr bgcolor="white" ng-repeat="friend in allFriendRequest">
+				<td>{{friend.friendName}}</td>
+				
+			<td ng-show="friend.status=='R'"><input type="submit" value="Approve" ng-click="approve(friend.friendId)" /></td>
+			<td ng-show="friend.status=='A'"><input type="submit" value="Reject" ng-click="reject(friend.friendId)" /></td>
+
+			</tr>
+		</table>
+
+	</form>
+
+
+</div>
+</body>
+</html>

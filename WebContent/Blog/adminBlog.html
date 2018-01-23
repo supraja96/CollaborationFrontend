@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div ng-controller="adminBlogController">
+	<form id="adminblogform" method="post">
+		<table width="100%" class="table table-striped" style="width:100%">
+<thead>
+			<tr bgcolor="#f57c00">
+				<td>Blog Name</td>
+				<td>Blog Content</td>
+				<td colspan="2">Operations</td>
+			</tr>
+			</thead>
+			<tr bgcolor="cyan" ng-repeat="blog in blogdata">
+				<td><a href="BlogPage">{{blog.blogName}}</a></td>
+				<td>{{blog.blogContent}}</td>
+				<td ng-show="blog.status=='N'">
+				<input type="submit" value="Approve" ng-click="approveBlog(blog.blogId)"/></td>
+				 <td ng-show="blog.status=='A'">
+				<input type="submit" value="Reject"  ng-click="rejectBlog(blog.blogId)" /></td> 
+						
+			</tr>
+		</table>
+
+	</form>
+
+
+</div>
+
+</body>
+</html>

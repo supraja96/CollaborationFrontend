@@ -1,0 +1,36 @@
+
+<style>
+ body 
+ 	{
+        background-color: #fbe9e7;
+    }
+.vertical-offset-100{
+    padding-top:10px;
+
+}
+</style>
+
+
+
+<div data-ng-controller="BlogController">
+
+		<div class="table-responsive">
+	<table id="myTable" class="table table-striped" style="width:100%" >
+		<thead>
+		<tr bgcolor="#8d6e63">
+			<td>Blog Name</td>
+			<td>Blog Content</td>
+			<td>Blog Likes</td>
+			
+		</tr>
+		</thead>
+				<tr bgcolor="#ffcdd2" ng-repeat="blog in blogdata">
+			<td>{{blog.blogName}}</td>
+			<td>{{blog.blogContent}}</td>
+			<td>{{blog.likes}}</td>
+			<td colspan="2">
+		</tr>
+
+	</table>
+</div>
+</div>

@@ -1,0 +1,65 @@
+<style>
+ body 
+ 	{
+        background-color: #fff3e0;
+    }
+.vertical-offset-100{
+    padding-top:10px;
+
+}
+</style>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<center>
+	<b font-size="6">Forum Page</b>
+</center>
+<div ng-controller="forumController">
+
+	<form id="forumform" data-ng-submit="insertForum()"method="post">
+		<table align="center" width="100%" border=1>
+			<tr>
+				<td>Forum Name</td>
+				<td><input type="text" name="forumName" data-ng-model="forum.forumName"/></td>
+			</tr>
+			<tr>
+				<td>Forum Content</td>
+				<td><textarea cols="30" row="10" name="forumContent" data-ng-model="forum.forumContent" /></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2"><center><input type="submit" value="Insert Forum" ></center></td>
+		</table>
+	</form>
+
+<br/>
+
+<div class="table-responsive">
+	<table id="myTable" class="table table-striped" style="width:100%" >
+		<thead>
+		<tr bgcolor="#8d6e63" >
+	
+			<td>Forum Name</td>
+			<td>Forum Content</td>
+			<td>Operations</td>
+		</tr>
+		
+		<tr bgcolor="#ffcdd2" ng-repeat="forum in forumdata">
+			<td>{{forum.forumName}}</td>
+			<td>{{forum.forumContent}}</td>
+
+			
+	 	   <!--  <td><center><input type="submit" value="Edit" ng-click="updateForum(forum.forumId)"/></td></center>
+			 -->
+			<td colspan="2"><center><input type="submit" value=" Delete Blog" ng-click="deleteForum(forum.forumId)"></center>
+		</tr>
+
+	</table>
+</div>
+</body>
+</html>

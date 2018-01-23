@@ -1,0 +1,35 @@
+
+
+
+<style>
+ body 
+ 	{
+        background-color: #fbe9e7;
+    }
+.vertical-offset-100{
+    padding-top:10px;
+
+}
+</style>
+
+<div data-ng-controller="forumController">
+
+	<div class="table-responsive">
+	<table id="myTable" class="table table-striped" style="width:100%" >
+		<thead>
+		<tr bgcolor="#8d6e63">
+
+			<td>Forum Name</td>
+			<td>Forum Content</td>
+			
+		</tr>
+		<tr bgcolor="#ffcdd2" ng-repeat="forum in forumdata">
+			<td>{{forum.forumName}}</td>
+			<td>{{forum.forumContent}}</td>
+			<td colspan="2">
+			</td>
+			</tr>
+			</table>
+			</div>
+			</div>
+			

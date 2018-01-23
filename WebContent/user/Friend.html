@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div ng-controller="UserController">
+
+<table border="1">
+	
+	<tr bgcolor="cyan"><td colspan="3"><center>Friend List</center></td></tr>
+	
+	<tr ng-repeat="user in allusers" bgcolor="gray">
+		<td>{{user.username}}</td>
+		<td>{{user.firstName}}</td>
+		<td ng-show="user.isOnline=='Y'">	Online</td>
+		<td ng-show="user.isOnline=='N'">	Offline</td>
+	</tr>
+	
+
+</table>
+
+</div>
+</body>
+</html>

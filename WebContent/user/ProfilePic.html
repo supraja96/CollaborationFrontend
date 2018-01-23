@@ -1,0 +1,17 @@
+<div ng-controller="UserController">
+
+ 
+<div class ="form-group">
+      <form enctype="multipart/form-data" method="post" action="http://localhost:8086/CollabarationBackend/doUpload">
+          <input type="file" name="file" id="file"/>
+          <input type="hidden" name="username" id="username" value="{{currentUser.username}}"/>
+          <input type="submit" value="upload">
+      </form>
+  </div>
+
+
+<!-- 
+<input type="file" name="file" data-upload-url="http://localhost:8181/Collabaration/doUpload" data-preview-file-type="any"/>
+-->
+
+</div>

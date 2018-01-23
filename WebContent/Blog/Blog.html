@@ -1,0 +1,59 @@
+<style>
+ body 
+ 	{
+        background-color: #fff3e0;
+    }
+.vertical-offset-100{
+    padding-top:10px;
+
+}
+</style>
+
+
+
+<center>
+	<b font-size="6">Blog Page</b>
+</center>
+<div ng-controller="BlogController">
+<!--  <img src="https://cdn.pixabay.com/photo/2016/02/25/16/57/blog-1222465_960_720.jpg" /> -->
+	<form id="blogform" data-ng-submit="insertBlog()"method="post">
+		<table align="center" width="100%" border=1>
+			<tr>
+				<td>Blog Name</td>
+				<td><input type="text" name="blogName" data-ng-model="blog.blogName"/></td>
+			</tr>
+			<tr>
+				<td>Blog Content</td>
+				<td><textarea cols="30" row="10" name="blogContent" data-ng-model="blog.blogContent" /></textarea></td>
+			</tr>
+			<tr>
+				<td colspan="2"><center><input type="submit" value="Insert Blog" ></center></td>
+		</table>
+	</form>
+
+<br/>
+	<div class="table-responsive">
+	<table id="myTable" class="table table-striped" style="width:100%" >
+		<thead>
+		<tr bgcolor="#8d6e63" >
+			<td><b>Blog Name</b></td>
+			<td><b>Blog Content</b></td>
+			
+			<td><b>Operations</b></td>
+		</tr>
+		</thead>
+				<tr bgcolor="#ffcdd2" ng-repeat="blog in blogdata">
+			<td>{{blog.blogName}}</td>
+			<td>{{blog.blogContent}}</td>
+			<td>{{blog.likes}}<input type="submit" value="Like" ng-click="incrementLike(blog.blogId)"/></td>
+			
+	 	 <!--    <td ng-show="currentUser.role=='user'"><center><input type="submit" value="update Blog" ng-click="updateBlog(blog.blogId)"/> -->
+			
+			<td colspan="2"><center><input type="submit" value=" Delete Blog" ng-click="deleteBlog(blog.blogId)"></center>
+			
+					
+		
+		</tr>
+
+	</table>
+</div>
